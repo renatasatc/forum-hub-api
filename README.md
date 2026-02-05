@@ -15,16 +15,19 @@ O Forum **Hub API** é uma API REST desenvolvida em Java + Spring Boot que permi
 
 A API possibilita criar, listar, atualizar, ativar/inativar e remover tópicos, além de possuir um sistema de login com geração de token para proteger os endpoints.
 
-🚀 Funcionalidades
+---
 
-🔐 Autenticação de usuários com JWT
-👤 Cadastro e busca de usuários
-💬 Criação, listagem e gerenciamento de tópicos
-📌 Filtro de tópicos por estado (ex: ATIVO, INATIVO)
-🗄 Persistência em banco PostgreSQL
-🛡 Proteção de rotas com Spring Security
+## 🚀 Funcionalidades
 
-🧠 Tecnologias Utilizadas
+🔐 Autenticação de usuários com JWT  
+👤 Cadastro e busca de usuários  
+💬 Criação, listagem e gerenciamento de tópicos  
+📌 Filtro de tópicos por estado (ex: ATIVO, INATIVO)  
+🗄 Persistência em banco PostgreSQL  
+🛡 Proteção de rotas com Spring Security  
+
+---
+## 🧠 Tecnologias Utilizadas
 
 - **Java 17**
 
@@ -40,14 +43,17 @@ A API possibilita criar, listar, atualizar, ativar/inativar e remover tópicos, 
 
 - **Maven**
 
-⚙️ Configuração do Banco de Dados
+---
 
-Crie um banco PostgreSQL:
+## ⚙️ Configuração do Banco de Dados
 
+1. Crie um banco no PostgreSQL, por exemplo `forumhub`:
+
+```sql
 CREATE DATABASE forumhub;
 
 
-Configure o application.properties (ou application.yml):
+2. Configure o application.properties (ou application.yml):
 
 spring.datasource.url=jdbc:postgresql://localhost:5432/forumhub
 spring.datasource.username=SEU_USUARIO
@@ -58,22 +64,24 @@ spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
 
 jwt.secret=SUA_CHAVE_SECRETA_JWT
-
-
-🔒 Importante:
+```
+---
+## 🔒 Importante:
 Nunca compartilhe senhas ou chaves secretas reais em repositórios públicos.
 
-▶️ Como Executar o Projeto
+---
+## ▶️ Como Executar o Projeto
+```sql
 git clone https://github.com/seu-usuario/forum-hub-api.git
 cd forum-hub-api
 mvn spring-boot:run
 
-
 A API iniciará em:
 
 http://localhost:8080
-
-🔐 Autenticação
+```
+---
+## 🔐 Autenticação
 
 A API utiliza JWT. Para acessar rotas protegidas:
 
@@ -85,16 +93,22 @@ A API utiliza JWT. Para acessar rotas protegidas:
 
 4️⃣ Authorization: Bearer SEU_TOKEN_AQUI
 
-📡 Endpoints da API
+---
+
+## 📡 Endpoints da API
+```sql
 🔑 Autenticação
 Método	Endpoint	Descrição
 POST	/login	    Autentica usuário e retorna token JWT
+```
 
+```sql
 👤 Usuários
 Método	Endpoint	Descrição
 GET	/usuarios	Lista usuários cadastrados
 GET	/usuarios/{id}	Busca usuário por ID
-
+```
+```sql
 💬 Tópicos
 Método	Endpoint	Descrição
 GET	/topicos	Lista todos os tópicos
@@ -102,7 +116,8 @@ GET	/topicos/{id}	Detalha um tópico
 POST	/topicos	Cria novo tópico
 PUT	/topicos/{id}	Atualiza um tópico
 DELETE	/topicos/{id}	Remove um tópico
-
+```
+```sql
 📌 Filtro por Estado do Tópico
 Método	Endpoint	Descrição
 GET	/topicos/estado/{estado}	Lista tópicos por estado
@@ -111,7 +126,8 @@ Exemplo de estados possíveis:
 
 - **INATIVO**
 - **ATIVO**
-
+```
+```sql
 🗂 Estrutura do Projeto
 src
 └── main
@@ -145,7 +161,9 @@ src
 │   └── TokenService.java          → Geração e validação de tokens
 │
 └── ApiApplication.java            → Classe principal da aplicação
+```
 
+```sql
 
 📘 Documentação da API (Swagger)
 
@@ -177,13 +195,18 @@ http://localhost:8080/swagger-ui/index.html
 - **Insira: Bearer SEU_TOKEN_AQUI**
 
 ✔ Agora você pode testar os endpoints protegidos 🎉
+```
 
-🔮 Melhorias Futuras
+## 🔮 Melhorias Futuras
 
-✨ Paginação e ordenação de tópicos
+✨ Paginação e ordenação de tópicos  
 ✨ Implementar filtros por autor ou curso
 
-👩‍💻 Autora
+---
 
-Projeto desenvolvido por Renata Saturnino Costa 💙
+
+## 👩‍💻 Autora
+
+Projeto desenvolvido por Renata Saturnino Costa 💙  
+Curso: One(ORACLE) + Alura  
 Para estudos de Java, Spring Boot, APIs REST e Segurança com JWT.
